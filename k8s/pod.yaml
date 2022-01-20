@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "learn-k8s"
+  labels:
+    name: "learn-k8s"
+spec:
+  containers:
+    - name: learn-k8s
+      image: "thiagosgdev/learn-k8s:latest"
