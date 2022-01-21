@@ -17,3 +17,6 @@ spec:
       containers:
         - name: "learn-k8s"
           image: "thiagosgdev/learn-k8s:latest"
+          env:
+            - name: TEST
+              value: "IT WORKS!!!"

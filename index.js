@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-    res.send("Hello K8s")
+    res.send("Test Enviroment Variable K8s "+process.env.TEST);
 })
 
 app.listen(5000, console.log("Listening on port 5000"));
