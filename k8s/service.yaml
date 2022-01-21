@@ -8,5 +8,9 @@ spec:
   type: ClusterIP
   ports:
   - name: learn-k8s-service
-    port: 5000
+    port: 4000
+    targetPort: 5000
     protocol: TCP
+    env:
+      - name: TEST
+        value: "IT WORKS!"
