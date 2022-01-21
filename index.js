@@ -3,7 +3,20 @@ import bodyParser from "body-parser";
 
 const app = express();
 
+let startedTime = Date.now();
+
 app.use(bodyParser.json());
+
+app.get("/healthz", (req, res) => {
+    let duration = (Date.now() - startedTime) / 1000 ;
+
+    if (duration < 10) {        
+        res.status(500).send("Duration:  " + duration);
+    }else {
+        res.status(200).send("Everything is alright");
+    }
+
+})
 
 app.get("/", (req, res) => {
     res.send("Test Enviroment Variable K8s "+process.env.TEST);
