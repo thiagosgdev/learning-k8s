@@ -13,7 +13,7 @@ app.get("/healthz", (req, res) => {
     if (duration < 10) {        
         res.status(500).send("Duration:  " + duration);
     }else {
-        res.status(200).send("Everything is alright");
+        res.send("Everything is alright");
     }
 
 })

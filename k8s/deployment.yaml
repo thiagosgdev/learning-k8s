@@ -20,13 +20,20 @@ spec:
           envFrom:
             - configMapRef:
                 name: learn-k8s-env
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 4000
+            periodSeconds: 3
+            failureThreshold: 30
+
           readinessProbe:
             httpGet:
               path: /healthz
               port: 4000
             periodSeconds: 3
             failureThreshold: 1
-            initialDelaySeconds: 10
+            #initialDelaySeconds: 15
 
           livenessProbe:
             httpGet:
@@ -36,7 +43,7 @@ spec:
             failureThreshold: 1
             timeoutSeconds: 1
             successThreshold: 1
-            initialDelaySeconds: 15
+            #initialDelaySeconds: 15
 
           #env:
           #  - name: TEST
