@@ -11,3 +11,6 @@ spec:
     port: 4000
     targetPort: 5000
     protocol: TCP
+    env:
+      - name: TEST
+        value: "IT WORKS!"
