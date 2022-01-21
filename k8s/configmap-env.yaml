@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: learn-k8s-env
+data:
+  NAME: "Lucy"
+  AGE: "3"

@@ -17,6 +17,17 @@ spec:
       containers:
         - name: "learn-k8s"
           image: "thiagosgdev/learn-k8s:latest"
-          env:
-            - name: TEST
-              value: "IT WORKS!!!"
+          envFrom:
+            - configMapRef:
+                name: learn-k8s-env
+          #env:
+          #  - name: TEST
+          #    valueFrom:
+          #      configMapKeyRef:
+          #        name: learn-k8s-env
+          #        key: NAME
+          #  - name: AGE
+          #    valueFrom:
+          #      configMapKeyRef:
+          #        name: learn-k8s-env
+          #        key: AGE
